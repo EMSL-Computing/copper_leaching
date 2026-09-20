@@ -5,7 +5,7 @@
 </p>
 <p align="center"><em>Connected flow through a two-dimensional pore network. Color traces inlet-connected paths; gray is the solid matrix. Copper recovery depends on whether chrysocolla sits next to these paths, not only on how much copper is present.</em></p>
 
-[![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
+[![License](https://img.shields.io/badge/license-CC0-lightgrey.svg)](LICENSE)
 [![Python](https://img.shields.io/badge/python-3-blue.svg)](https://www.python.org/)
 [![PFLOTRAN](https://img.shields.io/badge/reactive%20transport-PFLOTRAN-0B3D91.svg)](https://www.pflotran.org/)
 
@@ -42,14 +42,13 @@ Two pre-reaction metrics, computed on the initial pore–mineral map, make that 
 
 Reactive-transport **outputs** (`*.h5`, checkpoints, PFLOTRAN logs) are not stored here. They can be regenerated with PFLOTRAN if you need the full 300-run archive.
 
-This branch is the **manuscript code snapshot**: Python, figure products, and flow solvers. It does not include HPC launchers, the Overleaf LaTeX tree, or PFLOTRAN HDF5 outputs.
+This repository is the **manuscript code snapshot**: Python, figure products, and flow solvers. It does not include HPC launchers, the Overleaf LaTeX tree, schematic Figs. 1–2, or PFLOTRAN HDF5 outputs.
 
 ## Getting the code
 
 ```bash
-git clone -b manuscript --single-branch \
-  https://github.com/EMSL-Computing/multiphysics_modeling_agent.git
-cd multiphysics_modeling_agent
+git clone https://github.com/EMSL-Computing/copper_leaching.git
+cd copper_leaching
 ```
 
 Python 3 with NumPy, Matplotlib, pandas, and h5py is enough to rebuild figures. PFLOTRAN is required only if you re-run transport.
@@ -88,7 +87,7 @@ This work was supported by **EMSL AI-Enabled Pore-Scale Modeling for Critical Mi
 
 ## License
 
-MIT. Copyright Battelle Memorial Institute. See [`LICENSE`](LICENSE).
+[CC0 1.0 Universal](LICENSE). See [`LICENSE`](LICENSE).
 
 
 ## DISCLAIMER
