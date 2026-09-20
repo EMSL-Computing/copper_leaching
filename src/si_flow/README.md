@@ -1,5 +1,7 @@
 # `src/si_flow/` — SI flow & permeability validation (Figs. S3–S4)
 
+Part of the [copper_leaching](https://github.com/EMSL-Computing/copper_leaching) manuscript snapshot.
+
 **Purpose:** Supporting Information figures that validate **Stokes ↔ Darcy flow** on geom437 and summarize **ensemble permeability / outlet flux** distributions.
 
 Not the main recovery analysis (that is `src/plot_accessibility_ensemble.py`).

@@ -1,5 +1,7 @@
 # `src/` — paper code
 
+Shipped from [copper_leaching](https://github.com/EMSL-Computing/copper_leaching) (manuscript snapshot). Not the multiphysics development remote.
+
 ```text
 src/
   plot_accessibility_ensemble.py   # recovery figures (Figs 3–7, S2, S5–S8)

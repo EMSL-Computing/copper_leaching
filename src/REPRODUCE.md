@@ -1,5 +1,7 @@
 # Reproduce paper analysis and figures
 
+This file belongs to **[copper_leaching](https://github.com/EMSL-Computing/copper_leaching)**, the snapshot shipped with the manuscript. Development (HPC, campaign HDF5, Overleaf) is on `EMSL-Computing/multiphysics_modeling_agent`, not this tree.
+
 All paper code: **`src/`**. Analysis products: **`accessibility_ensemble/analysis/`**.
 
 ```bash

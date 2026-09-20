@@ -44,6 +44,13 @@ Reactive-transport **outputs** (`*.h5`, checkpoints, PFLOTRAN logs) are not stor
 
 This repository is the **manuscript code snapshot**: Python, figure products, and flow solvers. It does not include HPC launchers, the Overleaf LaTeX tree, schematic Figs. 1–2, or PFLOTRAN HDF5 outputs.
 
+## Repositories
+
+| Repository | Role |
+|------------|------|
+| **[EMSL-Computing/copper_leaching](https://github.com/EMSL-Computing/copper_leaching)** | **This repo.** Public snapshot shipped with the manuscript. |
+| [EMSL-Computing/multiphysics_modeling_agent](https://github.com/EMSL-Computing/multiphysics_modeling_agent) | Internal **development** remote (`arjun` and related work): campaigns, HPC, Overleaf submodule. Not what to clone for the paper. |
+
 ## Getting the code
 
 ```bash
