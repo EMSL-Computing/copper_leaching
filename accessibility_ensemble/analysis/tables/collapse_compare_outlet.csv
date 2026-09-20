@@ -1,0 +1,10 @@
+metric_key,metric_label,n,corr_r,power_law_r2,uses_kr
+full_model_kr,"$\Thetaacc f_{\mathrm{Cu,acc}}$ + $k_r$",300,0.7480623341551029,0.9762520284027458,1
+theta_exp_lr_kr,$\Thetaacc \exp(-l_r/60~\mu\mathrm{m})$ + $k_r$,300,0.744527545030884,0.9723357616186012,1
+theta_kr,$\Thetaacc$ + $k_r$,300,0.7575851211080519,0.9683477890137455,1
+theta,$\Thetaacc$ alone,300,0.7575851211080519,0.6053540264416456,0
+theta_cu_access,"$\Thetaacc f_{\mathrm{Cu,acc}}$",300,0.7480623341551029,0.6132531537587076,0
+theta_exp_lr,$\Thetaacc \exp(-l_r/60~\mu\mathrm{m})$,300,0.744527545030884,0.6107608219845445,0
+f_cu_acc,"$f_{\mathrm{Cu,acc}}$ alone",300,0.12614019446149857,0.015935889188006147,0
+l_r,$l_r$ alone,300,-0.10831081859144817,0.01197297563516131,0
+Pe_r,$Pe_r$,300,0.66778569295272,nan,0

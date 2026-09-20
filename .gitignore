@@ -1,0 +1,109 @@
+# =============================================================================
+# copper_leaching_pore_scale — monorepo ignore rules
+# Track: src/, scripts/reproduce_figures.sh, analysis products (no campaign HDF5)
+# =============================================================================
+
+# --- Entire trees (local only; root only — not manuscript/docs) ---
+/archive/
+/docs/
+
+# --- All dotfiles / dot-dirs (local agent, editors, hooks, …) ---
+# Keep repo metadata tracked.
+.*
+!.gitignore
+!.gitmodules
+
+# --- Python ---
+__pycache__/
+*.py[cod]
+*$py.class
+.ruff_cache/
+.pytest_cache/
+.mypy_cache/
+.venv/
+venv/
+env/
+
+# --- Local agent files (if not already caught by .*) ---
+AGENTS.md
+grok_session_id.md
+codex-local
+
+# --- OS / temp ---
+.DS_Store
+*.tmp
+**/temp/
+*.swp
+*~
+
+# --- Archives / packages ---
+*.zip
+
+# --- Logs ---
+*.log
+slurm-*.out
+slurm-*.err
+
+# --- Simulation / binary products (never commit PFLOTRAN campaign outputs) ---
+*.h5
+*.xmf
+*.xdmf
+*.chk
+*.out
+*.tec
+*.pft
+*.vtk
+*.gif
+*.html
+*.npz
+*.pptx
+*.pdf
+*.docx
+
+# --- LaTeX build artifacts ---
+*.aux
+*.bbl
+*.blg
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+*.toc
+*.lof
+*.lot
+
+# --- Manuscript LaTeX (not on this branch) ---
+manuscript/
+
+# --- Paper ensemble: ignore bulk campaigns; keep screening + analysis figures ---
+accessibility_ensemble/**
+!accessibility_ensemble/ensemble/
+!accessibility_ensemble/ensemble/screening/
+!accessibility_ensemble/ensemble/screening/**
+!accessibility_ensemble/analysis/
+!accessibility_ensemble/analysis/**
+
+# --- SI flow: ignore regenerable caches / run dumps ---
+src/si_flow/stokes_flow_cache/
+src/si_flow/**/__pycache__/
+src/si_flow/reference/**/*.h5
+src/si_flow/reference/**/*.chk
+src/si_flow/reference/**/*.out
+
+# --- Legacy paths (if present) ---
+paper/darcy_stokes_flow/
+realistic_pore/
+run_compare_Darcy_Stokes_flow/sweep_fd_runs/
+_smoke_matched_theta/
+
+# --- Tahoma/HPC (not on the manuscript branch) ---
+*.slurm
+submit_*.sh
+sync_to_tahoma.sh
+sync_to_tahoma_fast.sh
+run_chip_design_tahoma.sh
+hpc_setup_tahoma_safe.sh
+.sync_changed_files.txt
+
+# --- Misc plot droppings ---
+**/network.png
+**/darcy_compare.png

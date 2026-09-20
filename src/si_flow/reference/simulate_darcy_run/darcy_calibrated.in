@@ -1,0 +1,219 @@
+# Darcy + tracer case on shared pore geometry
+
+SIMULATION
+  SIMULATION_TYPE SUBSURFACE
+  PROCESS_MODELS
+    SUBSURFACE_FLOW flow
+      MODE RICHARDS
+    /
+    SUBSURFACE_TRANSPORT transport
+      MODE GIRT
+    /
+  /
+END
+
+SUBSURFACE
+
+NUMERICAL_METHODS FLOW
+  LINEAR_SOLVER
+    SOLVER DIRECT
+  /
+END
+
+NUMERICAL_METHODS TRANSPORT
+  LINEAR_SOLVER
+    SOLVER DIRECT
+  /
+END
+
+!------------------------------------------------------------------------------
+! Grid: 400 x 100 x 1, dx = dy = 2e-05 m
+!------------------------------------------------------------------------------
+
+GRID
+  TYPE STRUCTURED
+  NXYZ 400 100 1
+  BOUNDS
+    0.d0 0.d0 0.d0
+    8d-3 2d-3 1d-3
+  /
+END
+
+CHEMISTRY
+  PRIMARY_SPECIES
+    Tracer
+  /
+  OUTPUT
+    TOTAL
+    ALL
+  /
+END
+
+FLUID_PROPERTY
+  DIFFUSION_COEFFICIENT 1d-9
+END
+
+DATASET perm_dataset
+  HDF5_DATASET_NAME Permeability
+  FILENAME geometry_calibrate.h5
+END
+
+DATASET poro_dataset
+  HDF5_DATASET_NAME Porosity
+  FILENAME geometry_calibrate.h5
+END
+
+MATERIAL_PROPERTY pore
+  ID 1
+  CHARACTERISTIC_CURVES default
+  POROSITY DATASET poro_dataset
+  TORTUOSITY 1d+0
+  PERMEABILITY
+    DATASET perm_dataset
+  /
+END
+
+MATERIAL_PROPERTY solid
+  ID 2
+  CHARACTERISTIC_CURVES default
+  POROSITY 0.01d0
+  TORTUOSITY 1d-2
+  PERMEABILITY
+    DATASET perm_dataset
+  /
+END
+
+CHARACTERISTIC_CURVES default
+  DEFAULT
+END
+
+REGION all
+  COORDINATES
+    0.d0 0.d0 0.d0
+    8d-3 2d-3 1d-3
+  /
+END
+
+REGION inlet
+  FACE WEST
+  COORDINATES
+    0.d0 0.d0 0.d0
+    0.d0 2d-3 1d-3
+  /
+END
+
+REGION outlet
+  FACE EAST
+  COORDINATES
+    8d-3 0.d0 0.d0
+    8d-3 2d-3 1d-3
+  /
+END
+
+REGION bottom
+  FACE SOUTH
+  COORDINATES
+    0.d0 0.d0 0.d0
+    8d-3 0.d0 1d-3
+  /
+END
+
+REGION top
+  FACE NORTH
+  COORDINATES
+    0.d0 2d-3 0.d0
+    8d-3 2d-3 1d-3
+  /
+END
+
+REGION obs_outlet
+  FACE EAST
+  COORDINATES
+    8d-3 0.d0 0.d0
+    8d-3 2d-3 1d-3
+  /
+END
+
+OBSERVATION
+  BOUNDARY_CONDITION outlet
+END
+
+FLOW_CONDITION inflow
+  TYPE
+    LIQUID_PRESSURE DIRICHLET
+  /
+  LIQUID_PRESSURE 1.01326d+5
+END
+
+FLOW_CONDITION outlet
+  TYPE
+    LIQUID_PRESSURE DIRICHLET
+  /
+  LIQUID_PRESSURE 1.01325d+5
+END
+
+TRANSPORT_CONDITION background
+  TYPE DIRICHLET_ZERO_GRADIENT
+  CONSTRAINT background
+    CONCENTRATIONS
+      Tracer 1d-20 F
+    /
+  /
+END
+
+CONSTRAINT tracer_on
+  CONCENTRATIONS
+    Tracer 1d+0 F
+  /
+/
+
+CONSTRAINT tracer_off
+  CONCENTRATIONS
+    Tracer 1d-20 F
+  /
+/
+
+TRANSPORT_CONDITION tracer_pulse
+  TYPE DIRICHLET_ZERO_GRADIENT
+  CONSTRAINT_LIST
+    0.d0  tracer_on
+    1.045761101254d+1  tracer_off
+  /
+END
+
+INITIAL_CONDITION initial
+  FLOW_CONDITION      inflow
+  TRANSPORT_CONDITION background
+  REGION all
+END
+
+BOUNDARY_CONDITION inlet
+  FLOW_CONDITION      inflow
+  TRANSPORT_CONDITION tracer_pulse
+  REGION inlet
+END
+
+BOUNDARY_CONDITION outlet
+  FLOW_CONDITION      outlet
+  TRANSPORT_CONDITION background
+  REGION outlet
+END
+
+TIME
+  FINAL_TIME 1d+1 s
+  INITIAL_TIMESTEP_SIZE 1d-3 s
+  MAXIMUM_TIMESTEP_SIZE 1d+0 s
+END
+
+OUTPUT
+  PERIODIC TIME 1d+0 s
+  PERIODIC_OBSERVATION TIMESTEP 1
+  FORMAT HDF5
+  VELOCITY_AT_CENTER
+END
+
+STRATA
+  FILE geometry_calibrate.h5
+END
+
+END_SUBSURFACE
