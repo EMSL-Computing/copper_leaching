@@ -77,6 +77,8 @@ bash scripts/reproduce_figures.sh
 
 Step-by-step notes: [`src/REPRODUCE.md`](src/REPRODUCE.md).
 
+Please cite the manuscript using [`CITATION.cff`](CITATION.cff). The journal name there is a placeholder until publication.
+
 
 ## Contacts
 

@@ -1,0 +1,67 @@
+cff-version: 1.2.0
+message: If you use this software or the associated results, please cite the article below.
+type: software
+title: "copper_leaching: pore-scale mineral-flow accessibility workflow"
+version: "1"
+date-released: "2026-09-20"
+license: CC0-1.0
+repository-code: "https://github.com/EMSL-Computing/copper_leaching"
+authors:
+  - family-names: Chakrawal
+    given-names: Arjun
+    email: arjun.chakrawal@pnnl.gov
+    affiliation: Pacific Northwest National Laboratory
+  - family-names: Mudunuru
+    given-names: Maruti Kumar
+    affiliation: Pacific Northwest National Laboratory
+  - family-names: Venkat
+    given-names: Sameera Nalin
+    affiliation: Pacific Northwest National Laboratory
+  - family-names: Truong
+    given-names: Aramy
+    affiliation: Pacific Northwest National Laboratory
+  - family-names: Meile
+    given-names: Christof
+    affiliation: University of Georgia
+  - family-names: Nakshatrala
+    given-names: Kalyana
+    affiliation: University of Houston
+  - family-names: Zavarin
+    given-names: Mavrik
+    affiliation: Lawrence Livermore National Laboratory
+  - family-names: Dwivedi
+    given-names: Dipankar
+    affiliation: Lawrence Berkeley National Laboratory
+  - family-names: Qafoku
+    given-names: Odeta
+    affiliation: Pacific Northwest National Laboratory
+  - family-names: Karra
+    given-names: Satish
+    affiliation: Pacific Northwest National Laboratory
+preferred-citation:
+  type: article
+  title: "Beyond Bulk Grade: Mineral-Flow Accessibility Controls Pore-Scale Copper Recovery"
+  authors:
+    - family-names: Chakrawal
+      given-names: Arjun
+    - family-names: Mudunuru
+      given-names: Maruti Kumar
+    - family-names: Venkat
+      given-names: Sameera Nalin
+    - family-names: Truong
+      given-names: Aramy
+    - family-names: Meile
+      given-names: Christof
+    - family-names: Nakshatrala
+      given-names: Kalyana
+    - family-names: Zavarin
+      given-names: Mavrik
+    - family-names: Dwivedi
+      given-names: Dipankar
+    - family-names: Qafoku
+      given-names: Odeta
+    - family-names: Karra
+      given-names: Satish
+  year: 2026
+  journal: "Environmental Science & Technology (placeholder)"
+  notes: "In preparation. Journal name is a placeholder until publication."
