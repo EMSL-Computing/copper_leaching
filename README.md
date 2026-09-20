@@ -94,10 +94,6 @@ Pacific Northwest National Laboratory, Richland, Washington, USA.
 
 This work was supported by **EMSL AI-Enabled Pore-Scale Modeling for Critical Mineral and Metal Applications**, part of EMSL’s [Bridging Soil Scales](https://www.emsl.pnnl.gov/bridging-soil-scales) science campaign. Environmental Molecular Sciences Laboratory is a DOE Office of Science User Facility sponsored by the Biological and Environmental Research program under Contract No. DE-AC05-76RL01830.
 
-## License
-
-[CC0 1.0 Universal](LICENSE). See [`LICENSE`](LICENSE).
-
 
 ## DISCLAIMER
 This material was prepared as an account of work sponsored by an agency of the
