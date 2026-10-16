@@ -79,6 +79,12 @@ accessibility_ensemble/**
 !accessibility_ensemble/ensemble/
 !accessibility_ensemble/ensemble/screening/
 !accessibility_ensemble/ensemble/screening/**
+# Two realizations used by the graphical abstract (src/plot_graphical_abstract.py)
+!accessibility_ensemble/ensemble/realizations/
+!accessibility_ensemble/ensemble/realizations/geom484/
+!accessibility_ensemble/ensemble/realizations/geom484/**
+!accessibility_ensemble/ensemble/realizations/geom423/
+!accessibility_ensemble/ensemble/realizations/geom423/**
 !accessibility_ensemble/analysis/
 !accessibility_ensemble/analysis/**
 

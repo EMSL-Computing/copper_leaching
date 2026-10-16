@@ -42,6 +42,10 @@ fi
 echo "==> [1/2] metric tables + solid/outlet figures + dual combined panels"
 "${PLOT[@]}" all-metrics "${REFRESH[@]}"
 
+echo "==> [1b] Fig. 2 schematic + graphical abstract (needs headless Chromium for PNG/PDF)"
+python3 src/plot_fig02_scenario_schematic.py
+python3 src/plot_graphical_abstract.py
+
 echo "==> [2/2] SI S3–S4 flow validation (skip with --analysis-only)"
 if [[ "${ANALYSIS_ONLY}" -eq 0 ]]; then
   if [[ -x src/si_flow/run_tracer.sh ]]; then
