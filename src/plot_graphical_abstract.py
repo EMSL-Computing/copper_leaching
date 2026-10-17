@@ -204,7 +204,7 @@ def build_svg(ROOT: Path = REPO_ROOT) -> str:
         text(x0p - 12, py(v) + 7, f"{v}", 21, anchor="end", fill=MUTED)
     text((x0p + x1p) / 2, y0p + 72, "Reactive accessibility length (" + sym("l", "r", 24) + ", µm)", 24, anchor="middle")
     ym = (y0p + y1p) / 2
-    text(1052, ym, "Cu recovery (%)", 24, anchor="middle", extra=f'transform="rotate(-90 1052 {ym})"')
+    text(1052, ym, "Solid-phase Cu recovery (%)", 24, anchor="middle", extra=f'transform="rotate(-90 1052 {ym})"')
     xx = np.linspace(lx0 + 2, lx1 - 2, 60)
     pts = " ".join(f"{px(v):.1f},{py(21.6 * np.exp(-v / 136)):.1f}" for v in xx)
     add(f'<polyline points="{pts}" fill="none" stroke="{INK}" stroke-width="2.2" stroke-dasharray="8 6"/>')
