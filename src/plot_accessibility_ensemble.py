@@ -164,6 +164,7 @@ def ensure_analysis_dirs() -> None:
 
 PORE_DIFFUSIVITY_M2S = 1.0e-9
 SSA_CHRYSOCOLLA_M2_M3 = 100.0 * 1.0e4
+H_INLET_MOL_M3 = 0.1 * 1.0e3  # inlet acid [H+] at pH 1; reference concentration for Da_r
 FLUID_VISCOSITY_PA_S = 1.0e-3
 COLLAPSE_LAMBDA_M = 60.0e-6
 MATCHED_THETA_K_REF = 1e-9
@@ -605,7 +606,7 @@ def compute_pe_da_metrics(row: dict, *, cu_lookup: dict[str, float]) -> dict[str
     u = max(float(u), 1e-15)
     pe_r = u * l_r_m / PORE_DIFFUSIVITY_M2S
     k_r = float(row["rate_mol_cm2_s"]) * 1e4
-    da_r = k_r * SSA_CHRYSOCOLLA_M2_M3 * f_use * l_r_m / u
+    da_r = k_r * SSA_CHRYSOCOLLA_M2_M3 * f_use * l_r_m / (u * H_INLET_MOL_M3)
     return {
         "accessible_cu_frac": f_use,
         "u_ms": u,
