@@ -163,7 +163,7 @@ def ensure_analysis_dirs() -> None:
         (ANALYSIS_ROOT / metric).mkdir(parents=True, exist_ok=True)
 
 PORE_DIFFUSIVITY_M2S = 1.0e-9
-SSA_CHRYSOCOLLA_M2_M3 = 100.0 * 1.0e4
+SSA_CHRYSOCOLLA_M2_M3 = 100.0 * 1.0e2  # 100 cm^2/cm^3 = 1e4 m^2/m^3 (deck value)
 H_INLET_MOL_M3 = 0.1 * 1.0e3  # inlet acid [H+] at pH 1; reference concentration for Da_r
 FLUID_VISCOSITY_PA_S = 1.0e-3
 COLLAPSE_LAMBDA_M = 60.0e-6
